@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fred' ELEC — Électricien Brive-la-Gaillarde | Interventions 24h/7j</title>
+  <meta name="description" content="Fred' ELEC, électricien artisan certifié RGE à Brive-la-Gaillarde (19). Dépannage, installation, rénovation électrique. Intervention rapide en Corrèze.">
+  <link rel="canonical" href="https://fred-elec.fr/">
+  <meta property="og:title" content="Fred' ELEC — Électricien Brive-la-Gaillarde">
+  <meta property="og:description" content="Artisan électricien certifié RGE. Dépannage 24h/7j, installation, rénovation sur Brive-la-Gaillarde et 40 km.">
+  <meta property="og:image" content="assets/logo.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <script type="speculationrules">
+  {"prefetch":[{"source":"list","urls":["services.html","realisations.html","contact.html"]}]}
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ElectricalContractor",
+    "name": "Fred' ELEC",
+    "url": "https://fred-elec.fr",
+    "telephone": "+33XXXXXXXXX",
+    "email": "contact@fred-elec.fr",
+    "logo": "https://fred-elec.fr/assets/logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Brive-la-Gaillarde",
+      "addressRegion": "Corrèze",
+      "postalCode": "19100",
+      "addressCountry": "FR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 45.158, "longitude": 1.533 },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "00:00", "closes": "23:59"
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "47", "bestRating": "5" },
+    "areaServed": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 45.158, "longitude": 1.533 }, "geoRadius": "40000" }
+  }
+  </script>
+
+  <style>
+    /* ═══ HERO ═══════════════════════════════════════ */
+    .hero {
+      min-height: 100svh;
+      display: flex; flex-direction: column;
+      justify-content: center;
+      padding-top: 7rem; padding-bottom: 0;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0; pointer-events: none;
+      background:
+        linear-gradient(to bottom, transparent 55%, var(--bg) 100%),
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,.025) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,.015) 80px);
+    }
+    .hero .wrap { position: relative; z-index: 1; padding-bottom: 3.5rem; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: rgba(212,255,0,.06); border: 1px solid rgba(212,255,0,.22); border-radius: 2px;
+      padding: .38rem .9rem;
+      font-family: var(--mono); font-size: .67rem; font-weight: 500;
+      color: var(--lime); letter-spacing: .12em; text-transform: uppercase;
+      margin-bottom: 2.4rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--lime); flex-shrink: 0;
+      animation: blink 2s ease infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.35;transform:scale(.6)} }
+    .hero-h1 {
+      font-family: var(--display);
+      font-size: clamp(4.5rem, 13vw, 12rem);
+      font-weight: 800; line-height: .9; letter-spacing: -.04em;
+      color: var(--white); margin: 0 0 1.75rem;
+    }
+    .hero-h1 .lime { color: var(--lime); }
+    .hero-sub {
+      font-size: clamp(1.05rem, 2vw, 1.4rem);
+      font-weight: 300; color: var(--gray);
+      line-height: 1.6; max-width: 500px;
+      margin-bottom: 2.6rem;
+    }
+    .hero-sub em { color: var(--white); font-style: normal; font-weight: 400; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+
+    .hero-ticker {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      padding: .88rem 0;
+      background: var(--surface);
+    }
+    .ticker-track {
+      display: inline-flex; gap: 2.5rem;
+      white-space: nowrap;
+      animation: ticker 30s linear infinite;
+    }
+    .ticker-track span { font-family: var(--mono); font-size: .64rem; font-weight: 500; color: var(--gray); letter-spacing: .13em; text-transform: uppercase; }
+    .ticker-track .t-sep { color: var(--lime); }
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* ═══ SERVICES LIST ══════════════════════════════ */
+    .section-lead {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      gap: 2rem; margin-bottom: 3.5rem; flex-wrap: wrap;
+    }
+    .srv-list { list-style: none; border-top: 1px solid var(--border); }
+    .srv-item {
+      display: grid; grid-template-columns: 4.5rem 1fr auto;
+      align-items: center; gap: 2rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: border-bottom-color .2s;
+    }
+    .srv-item:hover { border-bottom-color: rgba(212,255,0,.22); }
+    .srv-num {
+      font-family: var(--mono); font-size: .68rem; font-weight: 500;
+      color: rgba(107,113,130,.3); letter-spacing: .1em;
+      transition: color .2s; user-select: none;
+    }
+    .srv-item:hover .srv-num { color: var(--lime); }
+    .srv-body h3 {
+      font-family: var(--display); font-weight: 800;
+      font-size: clamp(.95rem, 1.8vw, 1.3rem); letter-spacing: -.02em;
+      color: var(--white); margin-bottom: .3rem; line-height: 1.1;
+    }
+    .srv-body p { font-size: .83rem; color: var(--gray); line-height: 1.6; max-width: 440px; }
+    .srv-arrow {
+      font-family: var(--mono); font-size: 1rem; color: var(--gray);
+      text-decoration: none; padding: .45rem .6rem;
+      border: 1px solid var(--border); border-radius: var(--r);
+      transition: color .2s, border-color .2s; flex-shrink: 0;
+    }
+    .srv-arrow:hover { color: var(--lime); border-color: rgba(212,255,0,.28); }
+
+    /* ═══ STATS ══════════════════════════════════════ */
+    .stats-band { background: var(--surface); }
+    .stats-row {
+      display: grid; grid-template-columns: repeat(4,1fr);
+    }
+    .stat-cell {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--border);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-val {
+      font-family: var(--display);
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 800; line-height: 1; letter-spacing: -.04em;
+      color: var(--white); margin-bottom: .5rem;
+    }
+    .stat-val .u { font-size: .5em; color: var(--lime); }
+    .stat-lbl {
+      font-family: var(--mono); font-size: .64rem; font-weight: 500;
+      color: var(--gray); letter-spacing: .1em; text-transform: uppercase;
+    }
+
+    /* ═══ GALLERY TEASER ═════════════════════════════ */
+    .gal-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 2rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+    }
+    .gal-grid {
+      display: grid; grid-template-columns: 1.45fr 1fr 1fr;
+      gap: .8rem; height: 380px;
+    }
+    .gal-card {
+      position: relative; overflow: hidden;
+      border-radius: var(--r); background: var(--surf2);
+    }
+    .gal-card img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .65s ease;
+    }
+    .gal-card:hover img { transform: scale(1.05); }
+    .gal-lbl {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: .8rem 1rem .65rem;
+      background: linear-gradient(to top, rgba(7,9,15,.88) 0%, transparent);
+      font-family: var(--mono); font-size: .62rem; font-weight: 500;
+      color: var(--white); letter-spacing: .1em; text-transform: uppercase;
+    }
+
+    /* ═══ TESTIMONIAL ════════════════════════════════ */
+    .testi-wrap { background: var(--surf2); }
+    .testi-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+    .testi-stars { color: var(--lime); font-size: 1.1rem; letter-spacing: .22rem; margin-bottom: 1.6rem; }
+    .testi-quote {
+      font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 300; font-style: italic;
+      color: var(--white); line-height: 1.65; margin-bottom: 1.3rem;
+    }
+    .testi-by {
+      font-family: var(--mono); font-size: .66rem; color: var(--gray);
+      letter-spacing: .1em; text-transform: uppercase;
+    }
+    .testi-link {
+      margin-top: 1.8rem;
+      display: inline-block; font-family: var(--mono); font-size: .66rem;
+      color: var(--gray); letter-spacing: .1em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    .testi-link:hover { color: var(--white); }
+
+    /* ═══ URGENCE ════════════════════════════════════ */
+    .urg-section { background: var(--surface); border-top: 1px solid var(--border); }
+    .urg-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4rem; }
+    .urg-phone {
+      display: flex; flex-direction: column; align-items: flex-end; gap: .28rem;
+      text-decoration: none;
+      padding: 1.7rem 2rem;
+      border: 1px solid rgba(212,255,0,.18); border-radius: var(--r);
+      background: rgba(212,255,0,.04);
+      transition: background .2s, border-color .2s;
+    }
+    .urg-phone:hover { background: rgba(212,255,0,.09); border-color: rgba(212,255,0,.38); }
+    .urg-tag { font-family: var(--mono); font-size: .6rem; color: var(--gray); letter-spacing: .14em; text-transform: uppercase; }
+    .urg-num { font-family: var(--mono); font-size: clamp(1.35rem, 2.8vw, 2.1rem); font-weight: 500; color: var(--lime); letter-spacing: .06em; white-space: nowrap; }
+
+    /* ═══ RESPONSIVE ═════════════════════════════════ */
+    @media (max-width: 920px) {
+      .stats-row { grid-template-columns: 1fr 1fr; }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .stat-cell:nth-child(1), .stat-cell:nth-child(2) { border-bottom: 1px solid var(--border); }
+      .gal-grid { grid-template-columns: 1fr 1fr; height: auto; }
+      .gal-card { height: 210px; }
+      .gal-card:first-child { grid-column: 1/-1; height: 250px; }
+      .urg-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .urg-phone { align-items: flex-start; }
+    }
+    @media (max-width: 640px) {
+      .srv-item { grid-template-columns: 3rem 1fr; gap: .85rem; }
+      .srv-arrow { display: none; }
+      .section-lead, .gal-header { flex-direction: column; align-items: flex-start; }
+      .stats-row { grid-template-columns: 1fr; }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--border); padding: 1.75rem 1.25rem; }
+      .stat-cell:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════ NAV ════════════════════════════════════════ -->
+<nav class="site-nav at-top" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo" aria-label="Fred' ELEC — accueil">
+    <img src="assets/dark_logo.svg" alt="Fred' ELEC" width="130" height="34">
+  </a>
+  <ul class="nav-links" role="list">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="realisations.html">Réalisations</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="tel:+33XXXXXXXXX" class="nav-tel">0X&nbsp;XX&nbsp;XX&nbsp;XX&nbsp;XX</a>
+  <button class="nav-ham" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ════ HERO ════════════════════════════════════════ -->
+<section class="hero" aria-label="Présentation Fred' ELEC">
+  <div class="wrap">
+    <div class="hero-badge reveal">Électricien certifié RGE — Corrèze 19</div>
+    <h1 class="hero-h1 reveal">TOUJOURS<br>LÀ<span class="lime">.</span></h1>
+    <p class="hero-sub reveal">
+      quand ça tombe en panne.<br>
+      <em>Dépannage, installation, rénovation</em> —<br>
+      Brive-la-Gaillarde et 40 km alentour.
+    </p>
+    <div class="hero-actions stagger">
+      <a href="tel:+33XXXXXXXXX" class="btn-lime">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.37 2.18 2 2 0 012.34 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Appeler maintenant
+      </a>
+      <a href="realisations.html" class="btn-outline">Voir les réalisations</a>
+    </div>
+  </div>
+  <div class="hero-ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>INTERVENTION 24H/7J</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>RGE QUALIPV</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>ARTISAN CERTIFIÉ</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>CORRÈZE &amp; ALENTOURS</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>DEVIS GRATUIT</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>NF C 15-100</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>INTERVENTION 24H/7J</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>RGE QUALIPV</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>ARTISAN CERTIFIÉ</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>CORRÈZE &amp; ALENTOURS</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>DEVIS GRATUIT</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+      <span>NF C 15-100</span><span class="t-sep">&nbsp;✦&nbsp;</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SERVICES ════════════════════════════════════ -->
+<section class="page-section" aria-labelledby="srv-h">
+  <div class="wrap">
+    <div class="section-lead stagger">
+      <div>
+        <span class="eyebrow">Ce que je fais</span>
+        <h2 class="h2" id="srv-h">Six spécialités.<br>Un seul artisan.</h2>
+      </div>
+      <a href="services.html" class="btn-outline">Toutes les prestations</a>
+    </div>
+    <ol class="srv-list stagger" aria-label="Services de Fred' ELEC">
+      <li class="srv-item">
+        <span class="srv-num">01</span>
+        <div class="srv-body">
+          <h3>Dépannage électrique</h3>
+          <p>Panne, disjoncteur qui saute, court-circuit — intervention rapide, 24h/7j.</p>
+        </div>
+        <a href="services.html#depannage" class="srv-arrow" aria-label="En savoir plus sur le dépannage">→</a>
+      </li>
+      <li class="srv-item">
+        <span class="srv-num">02</span>
+        <div class="srv-body">
+          <h3>Tableau électrique</h3>
+          <p>Mise aux normes, remplacement, disjoncteurs différentiels type A ou AC.</p>
+        </div>
+        <a href="services.html#tableau" class="srv-arrow" aria-label="En savoir plus sur les tableaux">→</a>
+      </li>
+      <li class="srv-item">
+        <span class="srv-num">03</span>
+        <div class="srv-body">
+          <h3>Installation neuve</h3>
+          <p>Câblage complet maison ou appartement en construction, conformité NF C 15-100.</p>
+        </div>
+        <a href="services.html#installation" class="srv-arrow" aria-label="En savoir plus sur l'installation neuve">→</a>
+      </li>
+      <li class="srv-item">
+        <span class="srv-num">04</span>
+        <div class="srv-body">
+          <h3>Rénovation électrique</h3>
+          <p>Mise en sécurité, remplacement du réseau existant, rénovation complète ou partielle.</p>
+        </div>
+        <a href="services.html#renovation" class="srv-arrow" aria-label="En savoir plus sur la rénovation">→</a>
+      </li>
+      <li class="srv-item">
+        <span class="srv-num">05</span>
+        <div class="srv-body">
+          <h3>Domotique &amp; connecté</h3>
+          <p>Interrupteurs sans fil, éclairage LED, prises USB, VMC double-flux, volets connectés.</p>
+        </div>
+        <a href="services.html#domotique" class="srv-arrow" aria-label="En savoir plus sur la domotique">→</a>
+      </li>
+      <li class="srv-item">
+        <span class="srv-num">06</span>
+        <div class="srv-body">
+          <h3>Borne de recharge IRVE</h3>
+          <p>Installation wallbox homologuée pour véhicule électrique, avec attestation IRVE.</p>
+        </div>
+        <a href="services.html#irve" class="srv-arrow" aria-label="En savoir plus sur les bornes IRVE">→</a>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ════ STATS ════════════════════════════════════════ -->
+<section class="stats-band" aria-label="Chiffres clés">
+  <div class="wrap">
+    <div class="stats-row stagger">
+      <div class="stat-cell">
+        <div class="stat-val"><span data-count="10" data-suffix="">0</span><span class="u"> ans</span></div>
+        <div class="stat-lbl">d'expérience</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val"><span data-count="450" data-suffix="">0</span><span class="u">+</span></div>
+        <div class="stat-lbl">chantiers réalisés</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val"><span data-count="48" data-suffix="">0</span><span class="u">h</span></div>
+        <div class="stat-lbl">délai moyen d'intervention</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-val">4.9<span class="u">★</span></div>
+        <div class="stat-lbl">note Google Maps</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ GALLERY TEASER ═══════════════════════════════ -->
+<section class="page-section" aria-labelledby="gal-h">
+  <div class="wrap">
+    <div class="gal-header stagger">
+      <div>
+        <span class="eyebrow">Réalisations</span>
+        <h2 class="h2" id="gal-h">Des chantiers<br>qui parlent<br>d'eux-mêmes.</h2>
+      </div>
+      <a href="realisations.html" class="btn-outline">Voir toutes les photos</a>
+    </div>
+    <div class="gal-grid reveal">
+      <div class="gal-card">
+        <img src="assets/Maison_neuve2.jpg" alt="Tableau électrique neuf — maison neuve à Brive-la-Gaillarde" loading="lazy">
+        <div class="gal-lbl">Maison neuve — tableau complet</div>
+      </div>
+      <div class="gal-card">
+        <img src="assets/TGBT.jpg" alt="TGBT industriel Schneider installé en Corrèze" loading="lazy">
+        <div class="gal-lbl">TGBT industriel — Schneider</div>
+      </div>
+      <div class="gal-card">
+        <img src="assets/Divisionnaire.jpg" alt="Tableau divisionnaire de distribution professionnelle" loading="lazy">
+        <div class="gal-lbl">Tableau divisionnaire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ════ TESTIMONIAL ═════════════════════════════════ -->
+<section class="page-section testi-wrap" aria-label="Avis client">
+  <div class="wrap testi-inner reveal">
+    <div class="testi-stars" aria-label="Note : 5 étoiles sur 5">★★★★★</div>
+    <blockquote>
+      <p class="testi-quote">"Intervention rapide, travail soigné et tarif honnête. Fred a remis notre tableau aux normes en une demi-journée. Très professionnel, je recommande sans hésiter."</p>
+      <footer class="testi-by">— Marie-Hélène D., Brive-la-Gaillarde · Google</footer>
+    </blockquote>
+    <a href="contact.html#avis" class="testi-link">Voir tous les avis &nbsp;→</a>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ════ URGENCE CTA ══════════════════════════════════ -->
+<section class="page-section urg-section" aria-label="Contact urgence">
+  <div class="wrap urg-inner stagger">
+    <div>
+      <span class="eyebrow">Urgence électrique</span>
+      <h2 class="h2">Une panne ?<br>Je décroche.</h2>
+      <p class="sub">Disponible 24h/7j. Intervention en moins de 2h sur Brive-la-Gaillarde et agglomération.</p>
+    </div>
+    <a href="tel:+33XXXXXXXXX" class="urg-phone" aria-label="Appeler Fred' ELEC en urgence">
+      <span class="urg-tag">Appeler directement</span>
+      <span class="urg-num">0X XX XX XX XX</span>
+      <span class="urg-tag">Disponible 24h/7j</span>
+    </a>
+  </div>
+</section>
+
+<!-- ════ FOOTER ══════════════════════════════════════ -->
+<footer class="site-footer" aria-label="Pied de page">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">
+          <a href="index.html" aria-label="Fred' ELEC — retour accueil">
+            <img src="assets/dark_logo.svg" alt="Fred' ELEC" width="110" height="30">
+          </a>
+        </div>
+        <p class="footer-tagline">Électricien artisan indépendant à Brive-la-Gaillarde (19).<br>Certifié RGE · Décennal · Assurance Pro.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-soc" aria-label="Facebook">fb</a>
+          <a href="#" class="footer-soc" aria-label="Google Maps">G</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html#depannage">Dépannage électrique</a></li>
+          <li><a href="services.html#tableau">Tableaux électriques</a></li>
+          <li><a href="services.html#installation">Installation neuve</a></li>
+          <li><a href="services.html#renovation">Rénovation</a></li>
+          <li><a href="services.html#domotique">Domotique</a></li>
+          <li><a href="services.html#irve">Borne IRVE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="contact.html">Contact &amp; Devis</a></li>
+          <li><a href="contact.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Coordonnées</h4>
+        <ul>
+          <li><span>Brive-la-Gaillarde, 19100</span></li>
+          <li><span>Corrèze &amp; 40 km alentour</span></li>
+          <li><a href="tel:+33XXXXXXXXX">0X XX XX XX XX</a></li>
+          <li><a href="mailto:contact@fred-elec.fr">contact@fred-elec.fr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2025 Fred' ELEC — SIRET 9XX XXX XXX 00011</span>
+      <nav class="footer-legal" aria-label="Liens légaux">
+        <a href="cgv.php">CGV</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a href="tel:+33XXXXXXXXX" class="ring-cta" aria-label="Appeler Fred' ELEC">
+  <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.37 2.18 2 2 0 012.34 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.28-1.28a2 2 0 012.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+</a>
+
+<script src="assets/main.js" defer></script>
+</body>
+</html>
