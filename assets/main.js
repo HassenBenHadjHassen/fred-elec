@@ -1,115 +1,276 @@
-/* ══════════════════════════════════════════════
-   FRED ELEC — main.js  (shared, all pages)
-   ══════════════════════════════════════════════ */
+/**
+ * FRED' ELEC — Main Website Scripts
+ * Dynamic behaviors, animations, filters, and templates.
+ */
 
-;(function () {
+(function () {
   'use strict';
 
-  /* ── Nav : état au scroll ───────────────── */
-  const nav = document.querySelector('.site-nav');
-  if (nav) {
-    const updateNav = () => nav.classList.toggle('at-top', window.scrollY < 48);
-    window.addEventListener('scroll', updateNav, { passive: true });
-    updateNav();
-  }
-
-  /* ── Nav : hamburger ─────────────────────── */
-  const ham   = document.querySelector('.nav-ham');
-  const links = document.querySelector('.nav-links');
-  if (ham && links) {
-    ham.addEventListener('click', () => {
-      const open = ham.getAttribute('aria-expanded') === 'true';
-      ham.setAttribute('aria-expanded', String(!open));
-      links.classList.toggle('nav-open', !open);
-    });
-    links.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
-        links.classList.remove('nav-open');
-        ham.setAttribute('aria-expanded', 'false');
-      })
-    );
-    // Close on outside click
-    document.addEventListener('click', e => {
-      if (!nav.contains(e.target)) {
-        links.classList.remove('nav-open');
-        ham.setAttribute('aria-expanded', 'false');
-      }
-    });
-  }
-
-  /* ── Nav : lien actif ───────────────────── */
-  const page = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    const href = (a.getAttribute('href') || '').split('#')[0];
-    if (href === page || (page === '' && href === 'index.html')) {
-      a.classList.add('active');
-    }
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    initNavigation();
+    initScrollReveal();
+    initAnimatedCounters();
+    initFaqAccordion();
+    initPortfolioFilter();
+    initContactFormValidation();
   });
 
-  /* ── Scroll reveal ──────────────────────── */
-  if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
+  /**
+   * ── HEADER & NAVIGATION DRAWER ──
+   */
+  function initNavigation() {
+    const header = document.querySelector('.site-header');
+    
+    // Add scroll class to header
+    const handleScroll = () => {
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
+        header.style.boxShadow = '0 10px 30px rgba(2, 6, 23, 0.5)';
+        header.style.background = 'rgba(2, 6, 23, 0.9)';
+      } else {
+        header.classList.remove('scrolled');
+        header.style.boxShadow = 'none';
+        header.style.background = 'rgba(2, 6, 23, 0.8)';
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    // Mobile Hamburger & Drawer Controls
+    const hamBtn = document.querySelector('.nav-ham');
+    const closeBtn = document.querySelector('.drawer-close');
+    const drawer = document.getElementById('mobileDrawer');
+    
+    if (hamBtn && drawer) {
+      const toggleDrawer = (open) => {
+        hamBtn.setAttribute('aria-expanded', String(open));
+        drawer.classList.toggle('open', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      };
+
+      hamBtn.addEventListener('click', () => toggleDrawer(true));
+      
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => toggleDrawer(false));
+      }
+
+      // Close drawer on links click
+      drawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => toggleDrawer(false));
+      });
+
+      // Close drawer on resize to desktop view
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && drawer.classList.contains('open')) {
+          toggleDrawer(false);
         }
       });
-    }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal, .stagger').forEach(el => io.observe(el));
-  } else {
-    document.querySelectorAll('.reveal, .stagger').forEach(el => el.classList.add('in'));
+    }
   }
 
-  /* ── Compteurs animés ───────────────────── */
-  const counters = document.querySelectorAll('[data-count]');
-  if (counters.length && 'IntersectionObserver' in window) {
-    const cio = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el     = e.target;
-        const target = parseFloat(el.dataset.count);
-        const suffix = el.dataset.suffix || '';
-        const dur    = 1500;
-        let start    = null;
-        const step = ts => {
-          if (!start) start = ts;
-          const p    = Math.min((ts - start) / dur, 1);
-          const ease = 1 - Math.pow(1 - p, 3);
-          el.textContent = Math.round(target * ease) + suffix;
-          if (p < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
-        cio.unobserve(el);
+  /**
+   * ── SCROLL REVEAL (FADE-IN EFFECTS) ──
+   */
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal, .stagger');
+    
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.05,
+        rootMargin: '0px 0px -50px 0px'
       });
-    }, { threshold: 0.5 });
-    counters.forEach(el => cio.observe(el));
+
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      // Fallback if IntersectionObserver not supported
+      revealElements.forEach(el => el.classList.add('in'));
+    }
   }
 
-  /* ── Accordéon FAQ ──────────────────────── */
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const btn  = item.querySelector('.faq-q');
-    const body = item.querySelector('.faq-a');
-    if (!btn || !body) return;
-    body.style.maxHeight = '0';
-    body.style.overflow  = 'hidden';
-    body.style.transition = 'max-height .38s cubic-bezier(.4,0,.2,1)';
-    btn.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(other => {
-        other.classList.remove('open');
-        other.querySelector('.faq-a').style.maxHeight = '0';
+  /**
+   * ── STATS COUNTER ANIMATION ──
+   */
+  function initAnimatedCounters() {
+    const counters = document.querySelectorAll('[data-count]');
+    
+    if (counters.length && 'IntersectionObserver' in window) {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          
+          const el = entry.target;
+          const targetValue = parseFloat(el.getAttribute('data-count'));
+          const suffix = el.getAttribute('data-suffix') || '';
+          const duration = 1800; // Animation duration in ms
+          let startTime = null;
+
+          const animate = (timestamp) => {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+            
+            // Cubic easeOut deceleration
+            const ease = 1 - Math.pow(1 - progress, 3);
+            const currentValue = Math.round(targetValue * ease);
+            
+            el.textContent = currentValue + suffix;
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              el.textContent = targetValue + suffix;
+            }
+          };
+
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(el);
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => counterObserver.observe(counter));
+    } else {
+      // Fallback
+      counters.forEach(counter => {
+        const val = counter.getAttribute('data-count');
+        const suf = counter.getAttribute('data-suffix') || '';
+        counter.textContent = val + suf;
       });
-      if (!isOpen) {
-        item.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 48 + 'px';
+    }
+  }
+
+  /**
+   * ── FAQ ACCORDION SLIDE-TOGGLE ──
+   */
+  function initFaqAccordion() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-q');
+      const answer = item.querySelector('.faq-a');
+      
+      if (!question || !answer) return;
+
+      // Set initial state
+      answer.style.maxHeight = '0';
+      answer.style.overflow = 'hidden';
+      answer.style.transition = 'max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        
+        // Close other open accordion items
+        faqItems.forEach(otherItem => {
+          if (otherItem !== item && otherItem.classList.contains('open')) {
+            otherItem.classList.remove('open');
+            otherItem.querySelector('.faq-a').style.maxHeight = '0';
+          }
+        });
+
+        // Toggle current item
+        if (isOpen) {
+          item.classList.remove('open');
+          answer.style.maxHeight = '0';
+        } else {
+          item.classList.add('open');
+          // Add extra padding to scrollHeight so text doesn't overflow
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+  }
+
+  /**
+   * ── PORTFOLIO FILTER SYSTEM ──
+   */
+  function initPortfolioFilter() {
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const cards = document.querySelectorAll('.portfolio-card-wrap');
+
+    if (!filterButtons.length || !cards.length) return;
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Toggle active button class
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          const cat = card.getAttribute('data-category');
+          
+          if (filter === 'all' || cat === filter) {
+            card.style.display = 'block';
+            // Subtle entrance animation
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 300);
+          }
+        });
+      });
+    });
+  }
+
+  /**
+   * ── CONTACT FORM CLIENT-SIDE VALIDATION ──
+   */
+  function initContactFormValidation() {
+    const form = document.querySelector('.contact-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      let isValid = true;
+      const inputs = form.querySelectorAll('.form-control[required]');
+      
+      inputs.forEach(input => {
+        // Reset custom borders
+        input.style.borderColor = '';
+
+        if (!input.value.trim()) {
+          isValid = false;
+          input.style.borderColor = '#ef4444'; // Red border
+        } else if (input.type === 'email') {
+          // Simple email check
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!re.test(input.value.trim())) {
+            isValid = false;
+            input.style.borderColor = '#ef4444';
+          }
+        }
+      });
+
+      if (!isValid) {
+        e.preventDefault();
+        // Display validation feedback
+        let feedback = form.querySelector('.form-feedback');
+        if (!feedback) {
+          feedback = document.createElement('div');
+          feedback.className = 'form-feedback';
+          feedback.style.color = '#ef4444';
+          feedback.style.fontSize = '0.85rem';
+          feedback.style.marginTop = '1rem';
+          feedback.style.fontFamily = 'var(--display)';
+          feedback.style.fontWeight = '600';
+          form.appendChild(feedback);
+        }
+        feedback.textContent = 'Veuillez remplir correctement tous les champs obligatoires.';
       }
     });
-  });
-
-  /* ── Ticker : animation fallback ───────── */
-  // CSS handles it; JS just ensures animation runs after load
-  const track = document.querySelector('.ticker-track');
-  if (track) track.style.animationPlayState = 'running';
+  }
 
 })();
