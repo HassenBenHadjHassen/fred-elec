@@ -26,12 +26,8 @@
     const handleScroll = () => {
       if (window.scrollY > 40) {
         header.classList.add('scrolled');
-        header.style.boxShadow = '0 10px 30px rgba(2, 6, 23, 0.5)';
-        header.style.background = 'rgba(2, 6, 23, 0.9)';
       } else {
         header.classList.remove('scrolled');
-        header.style.boxShadow = 'none';
-        header.style.background = 'rgba(2, 6, 23, 0.8)';
       }
     };
     

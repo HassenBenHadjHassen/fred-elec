@@ -254,18 +254,22 @@
 
     <!-- ════ HERO SECTION ════════════════════════════════ -->
     <section class="hero" aria-label="Accueil Fred' ELEC">
-      <div class="grid-bg"></div>
-      <div class="glow-blur glow-blue" style="top: 20%; left: 5%"></div>
+      <img
+        src="assets/Maison_neuve.jpg"
+        alt="Artisan Électricien Brive"
+        class="hero-bg-img"
+      />
+      <div class="hero-overlay-v"></div>
+      <div class="hero-overlay-h"></div>
 
       <div class="wrap hero-content">
-        <div class="hero-badge reveal">
-          Artisan Électricien — Brive-la-Gaillarde & Alentours
-        </div>
+        <span class="eyebrow hero-eyebrow reveal">
+          Artisan Électricien · Brive-la-Gaillarde &amp; Alentours
+        </span>
 
         <h1 class="hero-h1 reveal">
-          TOUJOURS LÀ<br />
-          QUAND ÇA <span class="text-blue">DISJONCTE</span
-          ><span class="text-yellow">.</span>
+          Toujours là<br />
+          <span class="hero-italic">quand ça disjoncte.</span>
         </h1>
 
         <p class="hero-sub reveal">
@@ -276,7 +280,7 @@
         </p>
 
         <div class="hero-actions stagger">
-          <a href="tel:0685277580" class="btn-primary">
+          <a href="tel:0685277580" class="btn-primary-light">
             <svg
               width="16"
               height="16"
@@ -293,7 +297,24 @@
             </svg>
             Urgence 06 85 27 75 80
           </a>
-          <a href="services.html" class="btn-outline">Nos prestations</a>
+          <a href="services.html" class="btn-outline-light">Nos prestations</a>
+        </div>
+
+        <div class="hero-credentials reveal">
+          <span>Dépannage Urgence 24h/7j</span>
+          <span class="cred-sep"></span>
+          <span>Rénovation Complète</span>
+          <span class="cred-sep"></span>
+          <span>Norme NF C 15-100</span>
+          <span class="cred-sep"></span>
+          <span>Garantie Décennale</span>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line">
+          <span class="scroll-dot"></span>
         </div>
       </div>
     </section>
@@ -328,28 +349,27 @@
         <div class="stats-row stagger">
           <div class="stat-cell">
             <div class="stat-val">
-              <span data-count="10" data-suffix="">0</span
-              ><span class="u"> ans</span>
+              <span data-count="10" data-suffix="">0</span>
             </div>
-            <div class="stat-lbl">d'expérience terrain</div>
+            <div class="stat-lbl">Ans d'expérience</div>
           </div>
           <div class="stat-cell">
             <div class="stat-val">
               <span data-count="450" data-suffix="">0</span
               ><span class="u">+</span>
             </div>
-            <div class="stat-lbl">chantiers réalisés</div>
+            <div class="stat-lbl">Chantiers réalisés</div>
           </div>
           <div class="stat-cell">
             <div class="stat-val">
               <span data-count="2" data-suffix="">0</span
               ><span class="u">h</span>
             </div>
-            <div class="stat-lbl">délai max urgence</div>
+            <div class="stat-lbl">Délai d'intervention</div>
           </div>
           <div class="stat-cell">
             <div class="stat-val">4.9<span class="u">★</span></div>
-            <div class="stat-lbl">note Google Maps</div>
+            <div class="stat-lbl">Note Google Maps</div>
           </div>
         </div>
       </div>
@@ -361,6 +381,7 @@
         <div class="about-grid">
           <!-- Image frame with visual details -->
           <div class="about-visual reveal">
+            <div class="about-bg-char">F</div>
             <div class="about-img-frame">
               <img
                 src="assets/Maison_neuve.jpg"
@@ -369,7 +390,7 @@
             </div>
             <div class="about-badge-card">
               <div class="num">10</div>
-              <div class="lbl">ans<br />d'expérience</div>
+              <div class="lbl">ans<br />d'excellence</div>
             </div>
           </div>
 
@@ -377,11 +398,9 @@
           <div class="about-text-content reveal">
             <span class="eyebrow">Qui suis-je ?</span>
             <h2 class="h2" id="about-h">
-              Un artisan électricien<br /><span
-                class="text-blue italic font-normal"
-                >engagé</span
-              >
-              pour votre sécurité.
+              Un artisan électricien<br />
+              <span class="text-blue italic font-normal">engagé</span> pour
+              votre sécurité.
             </h2>
 
             <p class="about-desc">
@@ -395,19 +414,71 @@
 
             <div class="about-bullets-list">
               <div class="about-bullet-li">
-                <span class="bullet-icon">✓</span>
+                <span class="bullet-icon">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
                 <span>Norme NF C 15-100 respectée</span>
               </div>
               <div class="about-bullet-li">
-                <span class="bullet-icon">✓</span>
+                <span class="bullet-icon">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
                 <span>Garantie décennale et RC Pro</span>
               </div>
               <div class="about-bullet-li">
-                <span class="bullet-icon">✓</span>
+                <span class="bullet-icon">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
                 <span>Matériel professionnel certifié</span>
               </div>
               <div class="about-bullet-li">
-                <span class="bullet-icon">✓</span>
+                <span class="bullet-icon">
+                  <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </span>
                 <span>Devis gratuit sous 24 heures</span>
               </div>
             </div>
@@ -565,6 +636,78 @@
 
     <hr class="rule" />
 
+    <!-- ════ PORTFOLIO SECTION ═══════════════════════════ -->
+    <section class="section" aria-labelledby="portfolio-h">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <div>
+            <span class="eyebrow">Nos Réalisations</span>
+            <h2 class="h2" id="portfolio-h">
+              Chantiers récents,<br /><span class="text-blue italic font-normal"
+                >finitions de qualité.</span
+              >
+            </h2>
+          </div>
+          <a href="realisations.html" class="btn-outline"
+            >Voir tout le portfolio</a
+          >
+        </div>
+
+        <div class="portfolio-grid cols-4 stagger">
+          <!-- Project 1 -->
+          <div class="portfolio-card aspect-3-4">
+            <img
+              src="assets/Réno.jpg"
+              alt="Mise en sécurité tableau"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat">Dépannage</span>
+              <h3 class="portfolio-title">Mise en sécurité tableau</h3>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="portfolio-card aspect-3-4">
+            <img
+              src="assets/Maison_neuve.jpg"
+              alt="Installation neuve"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat">Neuf</span>
+              <h3 class="portfolio-title">Installation villa contemporaine</h3>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="portfolio-card aspect-3-4">
+            <img
+              src="assets/Divisionnaire.jpg"
+              alt="Tableau divisionnaire"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat">Rénovation</span>
+              <h3 class="portfolio-title">Câblage divisionnaire</h3>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="portfolio-card aspect-3-4">
+            <img
+              src="assets/TGBT.jpg"
+              alt="Armoire électrique TGBT"
+              loading="lazy"
+            />
+            <div class="portfolio-overlay">
+              <span class="portfolio-cat">Tertiaire</span>
+              <h3 class="portfolio-title">Armoire électrique TGBT</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
     <!-- ════ TESTIMONIAL ═════════════════════════════════ -->
     <section class="section" aria-label="Avis client">
       <div class="wrap reveal">
@@ -586,27 +729,283 @@
       </div>
     </section>
 
-    <!-- ════ URGENCE CTA SECTION ═════════════════════════ -->
-    <section class="section" aria-label="Contact urgence">
-      <div class="wrap reveal">
-        <div class="urg-cta-box">
-          <div class="glow-blur glow-blue"></div>
-          <div class="urg-info">
-            <span class="eyebrow" style="color: var(--accent-yel)"
-              >Urgence 24h/7j</span
-            >
-            <h2>Besoin d'un dépannage électrique immédiat ?</h2>
-            <p>
-              Une panne générale, un tableau qui fume ou un court-circuit
-              dangereux ? Pas de panique. J'interviens dans les plus brefs
-              délais sur Brive-la-Gaillarde et ses environs.
-            </p>
+    <hr class="rule" />
+
+    <!-- ════ INTERVENTION ZONES SECTION ══════════════════ -->
+    <section class="section" aria-labelledby="zones-h">
+      <div class="wrap">
+        <div class="section-header reveal">
+          <div>
+            <span class="eyebrow">Zone d'intervention</span>
+            <h2 class="h2" id="zones-h">
+              Électricien de proximité<br /><span
+                class="text-blue italic font-normal"
+                >en Corrèze &amp; alentours.</span
+              >
+            </h2>
           </div>
-          <a href="tel:0685277580" class="urg-link-card">
-            <span class="urg-lbl-top">Appeler directement</span>
-            <span class="urg-phone-num">06 85 27 75 80</span>
-            <span class="urg-lbl-bot">Intervention rapide en Corrèze</span>
+          <a href="contact.html" class="btn-outline">Vérifier ma zone</a>
+        </div>
+
+        <div class="cities-grid stagger">
+          <!-- City 1 -->
+          <a href="contact.html" class="city-card">
+            <div class="city-card-header">
+              <svg
+                class="icon-pin"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <svg
+                class="icon-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </div>
+            <div class="city-name">Brive</div>
+            <div class="city-meta">
+              <span>19100</span>
+              <span class="city-meta-dot"></span>
+              <span>Siège</span>
+            </div>
           </a>
+
+          <!-- City 2 -->
+          <a href="contact.html" class="city-card">
+            <div class="city-card-header">
+              <svg
+                class="icon-pin"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <svg
+                class="icon-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </div>
+            <div class="city-name">Malemort</div>
+            <div class="city-meta">
+              <span>19360</span>
+              <span class="city-meta-dot"></span>
+              <span>10 min</span>
+            </div>
+          </a>
+
+          <!-- City 3 -->
+          <a href="contact.html" class="city-card">
+            <div class="city-card-header">
+              <svg
+                class="icon-pin"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <svg
+                class="icon-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </div>
+            <div class="city-name">Ussac</div>
+            <div class="city-meta">
+              <span>19270</span>
+              <span class="city-meta-dot"></span>
+              <span>12 min</span>
+            </div>
+          </a>
+
+          <!-- City 4 -->
+          <a href="contact.html" class="city-card">
+            <div class="city-card-header">
+              <svg
+                class="icon-pin"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <svg
+                class="icon-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </div>
+            <div class="city-name">Larche</div>
+            <div class="city-meta">
+              <span>19600</span>
+              <span class="city-meta-dot"></span>
+              <span>15 min</span>
+            </div>
+          </a>
+
+          <!-- City 5 -->
+          <a href="contact.html" class="city-card">
+            <div class="city-card-header">
+              <svg
+                class="icon-pin"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <svg
+                class="icon-arrow"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                />
+              </svg>
+            </div>
+            <div class="city-name">Terrasson</div>
+            <div class="city-meta">
+              <span>24120</span>
+              <span class="city-meta-dot"></span>
+              <span>20 min</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" />
+
+    <!-- ════ URGENCE CTA SECTION ═════════════════════════ -->
+    <section class="urg-cta-section" aria-label="Contact urgence">
+      <img
+        src="assets/Divisionnaire.jpg"
+        alt=""
+        class="urg-bg-img"
+        loading="lazy"
+      />
+      <div class="urg-overlay"></div>
+      <div class="wrap urg-content reveal">
+        <span class="eyebrow" style="color: var(--accent-yel)"
+          >Urgence 24h/7j</span
+        >
+        <h2 class="urg-h2">Besoin d'un dépannage électrique immédiat ?</h2>
+        <p class="urg-p">
+          Une panne générale, un tableau qui fume ou un court-circuit dangereux
+          ? Pas de panique. J'interviens dans les plus brefs délais sur
+          Brive-la-Gaillarde et ses environs.
+        </p>
+        <div class="urg-actions">
+          <a href="tel:0685277580" class="btn-primary-light">
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            Appeler le 06 85 27 75 80
+          </a>
+          <a href="contact.html" class="btn-outline-light">Demander un Devis</a>
         </div>
       </div>
     </section>
