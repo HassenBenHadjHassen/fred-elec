@@ -3,9 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Fred' ELEC — Électricien Brive-la-Gaillarde | Interventions 24h/7j
-    </title>
+    <title>Fred' ELEC — Électricien Brive-la-Gaillarde</title>
     <meta
       name="description"
       content="Fred' ELEC, électricien artisan à Brive-la-Gaillarde (19). Dépannage 24h/7j, installation, rénovation électrique. Intervention rapide Brive et Corrèze."
@@ -60,15 +58,18 @@
         "@type": "ElectricalContractor",
         "name": "Fred' ELEC",
         "url": "https://www.fredelec.pro",
+        "logo": "https://www.fredelec.pro/assets/logo.png",
+        "image": "https://www.fredelec.pro/assets/Maison_neuve.jpg",
+        "description": "Artisan électricien à Brive-la-Gaillarde (19). Dépannage électrique 24h/7j, installations neuves, rénovations et bornes IRVE.",
         "telephone": "+33685277580",
         "email": "contact@fredelec.pro",
-        "logo": "https://www.fredelec.pro/assets/logo.png",
+        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "12 rue Abbé Charles Lair",
           "addressLocality": "Brive-la-Gaillarde",
-          "addressRegion": "Corrèze",
           "postalCode": "19100",
+          "addressRegion": "Corrèze",
           "addressCountry": "FR"
         },
         "geo": {
@@ -90,21 +91,29 @@
           "opens": "00:00",
           "closes": "23:59"
         },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "47",
-          "bestRating": "5"
-        },
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": 45.158,
-            "longitude": 1.533
+        "areaServed": [
+          {
+            "@type": "AdministrativeArea",
+            "name": "Brive-la-Gaillarde"
           },
-          "geoRadius": "40000"
-        }
+          {
+            "@type": "AdministrativeArea",
+            "name": "Malemort"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Ussac"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Larche"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Terrasson-Lavilledieu"
+          }
+        ],
+        "sameAs": ["https://www.facebook.com/fredelec.brive"]
       }
     </script>
   </head>
@@ -268,8 +277,11 @@
         </span>
 
         <h1 class="hero-h1 reveal">
-          Toujours là<br />
-          <span class="hero-italic">quand ça disjoncte.</span>
+          Fred' ELEC<br />
+          <span class="hero-italic"
+            >Électricien Brive-la-Gaillarde Toujours là quand ça
+            disjoncte.</span
+          >
         </h1>
 
         <p class="hero-sub reveal">
@@ -310,8 +322,6 @@
           <span>Garantie Décennale</span>
         </div>
       </div>
-
-      
     </section>
 
     <!-- ════ SERVICE TICKER ══════════════════════════════ -->
@@ -497,7 +507,9 @@
         <div class="section-header reveal">
           <div>
             <span class="eyebrow">Prestations</span>
-            <h2 class="h2" id="srv-h">Nos domaines<br />d'intervention.</h2>
+            <h2 class="h2" id="srv-h">
+              Nos Prestations d'Électricité Générale à Brive-la-Gaillarde.
+            </h2>
           </div>
           <p class="lead-p">
             Du simple dépannage de disjoncteur à la pose complète d'une borne de
@@ -1035,7 +1047,7 @@
 
           <!-- Col 2: Services Quick Links -->
           <div class="footer-col">
-            <h4>Nos Prestations</h4>
+            <h3>Nos Prestations</h3>
             <ul>
               <li><a href="services.html#depannage">Dépannage d'urgence</a></li>
               <li><a href="services.html#neuves">Installations neuves</a></li>
@@ -1054,7 +1066,7 @@
 
           <!-- Col 3: Site Navigation -->
           <div class="footer-col">
-            <h4>Navigation</h4>
+            <h3>Navigation</h3>
             <ul>
               <li><a href="index.html">Accueil</a></li>
               <li><a href="services.html">Prestations</a></li>
@@ -1066,7 +1078,7 @@
 
           <!-- Col 4: Coordinates -->
           <div class="footer-col">
-            <h4>Coordonnées</h4>
+            <h3>Coordonnées</h3>
             <ul class="footer-contact-list">
               <li class="contact-item">
                 <svg

@@ -45,6 +45,92 @@
         ]
       }
     </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://www.fredelec.pro/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Réalisations",
+                "item": "https://www.fredelec.pro/realisations.html"
+              }
+            ]
+          },
+          {
+            "@type": "ElectricalContractor",
+            "name": "Fred' ELEC",
+            "url": "https://www.fredelec.pro",
+            "logo": "https://www.fredelec.pro/assets/logo.png",
+            "image": "https://www.fredelec.pro/assets/Maison_neuve.jpg",
+            "description": "Artisan électricien à Brive-la-Gaillarde (19). Dépannage électrique 24h/7j, installations neuves, rénovations et bornes IRVE.",
+            "telephone": "+33685277580",
+            "email": "contact@fredelec.pro",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "12 rue Abbé Charles Lair",
+              "addressLocality": "Brive-la-Gaillarde",
+              "postalCode": "19100",
+              "addressRegion": "Corrèze",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 45.158,
+              "longitude": 1.533
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Brive-la-Gaillarde"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Malemort"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Ussac"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Larche"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Terrasson-Lavilledieu"
+              }
+            ],
+            "sameAs": ["https://www.facebook.com/fredelec.brive"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="antialiased">
     <!-- ════ TOP BAR ═════════════════════════════════════ -->
@@ -195,10 +281,8 @@
       <div class="wrap services-header-section reveal">
         <span class="eyebrow">Réalisations</span>
         <h1 class="h2">
-          Des chantiers menés avec<br /><span
-            class="text-blue italic font-normal"
-            >rigueur et précision</span
-          >.
+          Nos Réalisations & Chantiers Électriques à Brive-la-Gaillarde et en
+          Corrèze.
         </h1>
         <p class="lead-p" style="margin: 0 auto">
           Découvrez quelques exemples de travaux récents effectués chez nos
@@ -242,7 +326,7 @@
               />
               <div class="portfolio-overlay">
                 <span class="portfolio-cat">Tableaux &amp; Sécurisation</span>
-                <h3 class="portfolio-title">Tableau complet résidentiel</h3>
+                <h2 class="portfolio-title">Tableau complet résidentiel</h2>
                 <span
                   class="portfolio-cat"
                   style="
@@ -266,7 +350,7 @@
               />
               <div class="portfolio-overlay">
                 <span class="portfolio-cat">Industriel &amp; Réseaux</span>
-                <h3 class="portfolio-title">TGBT de puissance Schneider</h3>
+                <h2 class="portfolio-title">TGBT de puissance Schneider</h2>
                 <span
                   class="portfolio-cat"
                   style="
@@ -290,9 +374,9 @@
               />
               <div class="portfolio-overlay">
                 <span class="portfolio-cat">Tableaux &amp; Sécurisation</span>
-                <h3 class="portfolio-title">
+                <h2 class="portfolio-title">
                   Tableau de distribution secondaire
-                </h3>
+                </h2>
                 <span
                   class="portfolio-cat"
                   style="
@@ -316,7 +400,7 @@
               />
               <div class="portfolio-overlay">
                 <span class="portfolio-cat">Installations Neuves</span>
-                <h3 class="portfolio-title">Passage des gaines sous-dalle</h3>
+                <h2 class="portfolio-title">Passage des gaines sous-dalle</h2>
                 <span
                   class="portfolio-cat"
                   style="
@@ -340,7 +424,7 @@
               />
               <div class="portfolio-overlay">
                 <span class="portfolio-cat">Rénovations</span>
-                <h3 class="portfolio-title">Mise en sécurité tableau ancien</h3>
+                <h2 class="portfolio-title">Mise en sécurité tableau ancien</h2>
                 <span
                   class="portfolio-cat"
                   style="
@@ -415,7 +499,7 @@
 
           <!-- Col 2: Services Quick Links -->
           <div class="footer-col">
-            <h4>Nos Prestations</h4>
+            <h3>Nos Prestations</h3>
             <ul>
               <li><a href="services.html#depannage">Dépannage d'urgence</a></li>
               <li><a href="services.html#neuves">Installations neuves</a></li>
@@ -434,7 +518,7 @@
 
           <!-- Col 3: Site Navigation -->
           <div class="footer-col">
-            <h4>Navigation</h4>
+            <h3>Navigation</h3>
             <ul>
               <li><a href="index.html">Accueil</a></li>
               <li><a href="services.html">Prestations</a></li>
@@ -446,7 +530,7 @@
 
           <!-- Col 4: Coordinates -->
           <div class="footer-col">
-            <h4>Coordonnées</h4>
+            <h3>Coordonnées</h3>
             <ul class="footer-contact-list">
               <li class="contact-item">
                 <svg

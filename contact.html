@@ -52,6 +52,137 @@
         ]
       }
     </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Accueil",
+                "item": "https://www.fredelec.pro/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Contact & Devis",
+                "item": "https://www.fredelec.pro/contact.html"
+              }
+            ]
+          },
+          {
+            "@type": "ElectricalContractor",
+            "name": "Fred' ELEC",
+            "url": "https://www.fredelec.pro",
+            "logo": "https://www.fredelec.pro/assets/logo.png",
+            "image": "https://www.fredelec.pro/assets/Maison_neuve.jpg",
+            "description": "Artisan électricien à Brive-la-Gaillarde (19). Dépannage électrique 24h/7j, installations neuves, rénovations et bornes IRVE.",
+            "telephone": "+33685277580",
+            "email": "contact@fredelec.pro",
+            "priceRange": "$$",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "12 rue Abbé Charles Lair",
+              "addressLocality": "Brive-la-Gaillarde",
+              "postalCode": "19100",
+              "addressRegion": "Corrèze",
+              "addressCountry": "FR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 45.158,
+              "longitude": 1.533
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Brive-la-Gaillarde"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Malemort"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Ussac"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Larche"
+              },
+              {
+                "@type": "AdministrativeArea",
+                "name": "Terrasson-Lavilledieu"
+              }
+            ],
+            "sameAs": ["https://www.facebook.com/fredelec.brive"]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Quels sont vos délais d'intervention en cas d'urgence ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pour toute urgence électrique (panne de courant générale, court-circuit suspect, disjoncteur défectueux), nous intervenons dans un délai maximum de 2 heures à Brive-la-Gaillarde et ses alentours. Nos services de dépannage sont disponibles 24h/24 et 7j/7."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Vos devis sont-ils gratuits ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, l'ensemble de nos devis d'installation, de rénovation ou de mise aux normes sont 100% gratuits et sans engagement. Nous nous engageons à vous transmettre une estimation détaillée et transparente sous 24 heures après notre visite sur place."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelle est votre zone d'intervention ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Notre atelier est basé à Brive-la-Gaillarde (19100). Nous intervenons dans un rayon de 40 km tout autour, englobant des communes telles que Malemort, Ussac, Tulle, Donzenac, Objat, Larche, Terrasson-Lavilledieu, et Nespouls."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Quelles garanties offrez-vous sur vos travaux ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Toutes nos installations et rénovations électriques sont couvertes par une assurance responsabilité civile professionnelle et une garantie décennale. De plus, nos interventions respectent la norme NF C 15-100."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Êtes-vous qualifié pour poser des bornes de recharge (IRVE) ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, nous possédons la qualification officielle IRVE. Cette certification est obligatoire pour toute installation de borne d'une puissance supérieure à 3.7 kW et vous permet de bénéficier d'aides de l'État."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body class="antialiased">
     <!-- ════ TOP BAR ═════════════════════════════════════ -->
@@ -239,7 +370,7 @@
                   </svg>
                 </div>
                 <div class="contact-item-content">
-                  <h4>Téléphone</h4>
+                  <h3>Téléphone</h3>
                   <p>
                     <a
                       href="tel:0685277580"
@@ -265,7 +396,7 @@
                   </svg>
                 </div>
                 <div class="contact-item-content">
-                  <h4>Email</h4>
+                  <h3>Email</h3>
                   <p>
                     <a
                       href="mailto:contact@fredelec.pro"
@@ -295,7 +426,7 @@
                   </svg>
                 </div>
                 <div class="contact-item-content">
-                  <h4>Adresse de l'atelier</h4>
+                  <h3>Adresse de l'atelier</h3>
                   <p>12 rue Abbé Charles Lair,<br />19100 Brive-la-Gaillarde</p>
                 </div>
               </div>
@@ -645,7 +776,7 @@
 
           <!-- Col 2: Services Quick Links -->
           <div class="footer-col">
-            <h4>Nos Prestations</h4>
+            <h3>Nos Prestations</h3>
             <ul>
               <li><a href="services.html#depannage">Dépannage d'urgence</a></li>
               <li><a href="services.html#neuves">Installations neuves</a></li>
@@ -664,7 +795,7 @@
 
           <!-- Col 3: Site Navigation -->
           <div class="footer-col">
-            <h4>Navigation</h4>
+            <h3>Navigation</h3>
             <ul>
               <li><a href="index.html">Accueil</a></li>
               <li><a href="services.html">Prestations</a></li>
@@ -676,7 +807,7 @@
 
           <!-- Col 4: Coordinates -->
           <div class="footer-col">
-            <h4>Coordonnées</h4>
+            <h3>Coordonnées</h3>
             <ul class="footer-contact-list">
               <li class="contact-item">
                 <svg

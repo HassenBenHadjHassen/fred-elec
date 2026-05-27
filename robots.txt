@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Disallow: /cgv.html
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Sitemap XML
+Sitemap: https://www.fredelec.pro/sitemap.xml
