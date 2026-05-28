@@ -1117,8 +1117,9 @@ select.form-control option { background: #ffffff; color: #1e293b; }
   .portfolio-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
   .cities-grid { grid-template-columns: repeat(3, 1fr); }
   .service-detail-row, .service-detail-row:nth-child(even) { grid-template-columns: 1fr; gap: 2.5rem; }
-  .service-detail-row:nth-child(even) .service-detail-text { order: 1; }
-  .service-detail-row:nth-child(even) .service-detail-visual { order: 2; }
+  /* Image always first on tablet/mobile, regardless of even/odd alternation */
+  .service-detail-row:nth-child(even) .service-detail-visual { order: 1; }
+  .service-detail-row:nth-child(even) .service-detail-text { order: 2; }
 }
 
 @media (max-width: 860px) {
@@ -1147,6 +1148,8 @@ select.form-control option { background: #ffffff; color: #1e293b; }
 }
 
 @media (max-width: 580px) {
+  .service-sublist { grid-template-columns: 1fr; gap: 0.65rem; }
+  .service-visual-frame { aspect-ratio: 4 / 3; }
   .stats-row { grid-template-columns: repeat(2, 1fr); }
   .stat-cell:nth-child(odd) { border-right: 1px solid var(--border); }
   .stat-cell { border-bottom: 1px solid var(--border); }
