@@ -4,11 +4,11 @@
 
 ## Pages Principales
 
-- [Accueil](https://www.fredelec.pro/) : Présentation de l'artisan, des services d'électricité générale, des chantiers récents, des avis clients et des zones d'intervention autour de Brive-la-Gaillarde (rayon de 40 km).
-- [Nos Services](https://www.fredelec.pro/services.html) : Description complète et détaillée des prestations : dépannage d'urgence, installations électriques neuves, rénovations complètes, mise aux normes NF C 15-100, éclairage LED, courant fort et courant faible.
-- [Nos Réalisations](https://www.fredelec.pro/realisations.html) : Galerie photos et détails des chantiers récents : armoires électriques TGBT, câblages résidentiels, distribution de gaines sous-dalle, mise en sécurité de tableaux anciens.
-- [Contact et Demande de Devis](https://www.fredelec.pro/contact.html) : Formulaire de demande de devis en ligne sous 24h, coordonnées (téléphone, email, adresse de l'atelier) et Foire Aux Questions (FAQ) sur les interventions.
+- [Accueil](https://fredelec.pro/) : Présentation de l'artisan, des services d'électricité générale, des chantiers récents, des avis clients et des zones d'intervention autour de Brive-la-Gaillarde (rayon de 40 km).
+- [Nos Services](https://fredelec.pro/services.html) : Description complète et détaillée des prestations : dépannage d'urgence, installations électriques neuves, rénovations complètes, mise aux normes NF C 15-100, éclairage LED, courant fort et courant faible.
+- [Nos Réalisations](https://fredelec.pro/realisations.html) : Galerie photos et détails des chantiers récents : armoires électriques TGBT, câblages résidentiels, distribution de gaines sous-dalle, mise en sécurité de tableaux anciens.
+- [Contact et Demande de Devis](https://fredelec.pro/contact.html) : Formulaire de demande de devis en ligne sous 24h, coordonnées (téléphone, email, adresse de l'atelier) et Foire Aux Questions (FAQ) sur les interventions.
 
 ## Informations Juridiques
 
-- [CGV & Mentions Légales](https://www.fredelec.pro/cgv.html) : Conditions Générales de Vente, mentions légales (SIRET : 104 045 182, SASU au capital de 1 000 €) et politique de confidentialité (RGPD).
+- [CGV & Mentions Légales](https://fredelec.pro/cgv.html) : Conditions Générales de Vente, mentions légales (SIRET : 104 045 182, SASU au capital de 1 000 €) et politique de confidentialité (RGPD).

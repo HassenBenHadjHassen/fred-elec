@@ -9,4 +9,4 @@ User-agent: OAI-SearchBot
 Allow: /
 
 # Sitemap XML
-Sitemap: https://www.fredelec.pro/sitemap.xml
+Sitemap: https://fredelec.pro/sitemap.xml
