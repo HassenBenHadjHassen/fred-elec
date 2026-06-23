@@ -933,6 +933,171 @@ select.form-control {
 }
 select.form-control option { background: #ffffff; color: #1e293b; }
 
+/* ── Contact Form AJAX & Success State Custom Styles ── */
+.form-fields-container {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.form-success-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  animation: formSuccessFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes formSuccessFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.75rem;
+}
+
+.success-checkmark {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 3;
+  stroke: var(--accent-blue);
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px rgba(0, 144, 224, 0.2);
+  animation: checkmarkFill .4s ease-in-out .4s forwards, checkmarkScale .3s ease-in-out .9s both;
+}
+
+.success-checkmark-circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 3;
+  stroke-miterlimit: 10;
+  stroke: var(--accent-blue);
+  fill: none;
+  animation: checkmarkStroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+}
+
+.success-checkmark-check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  stroke: var(--accent-blue);
+  animation: checkmarkStroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes checkmarkStroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes checkmarkScale {
+  0%, 100% {
+    transform: none;
+  }
+  50% {
+    transform: scale3d(1.1, 1.1, 1);
+  }
+}
+
+@keyframes checkmarkFill {
+  100% {
+    box-shadow: inset 0px 0px 0px 36px rgba(0, 144, 224, 0.05);
+  }
+}
+
+.success-title {
+  font-family: var(--display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.success-message {
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+}
+
+/* Loading & Feedback States */
+.btn-primary.loading {
+  background: var(--gray) !important;
+  box-shadow: none !important;
+  pointer-events: none;
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-primary.loading::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: btnSpinner 0.6s linear infinite;
+}
+
+@keyframes btnSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-feedback {
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--r);
+  font-family: var(--body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: feedbackSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.form-feedback.error {
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.form-feedback.success {
+  background: rgba(16, 185, 129, 0.08);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+@keyframes feedbackSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ── Service Detail Pages ───────────────────────────── */
 .services-header-section {
   text-align: center;

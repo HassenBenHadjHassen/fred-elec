@@ -223,15 +223,19 @@
   }
 
   /**
-   * ── CONTACT FORM CLIENT-SIDE VALIDATION ──
+   * ── CONTACT FORM CLIENT-SIDE VALIDATION & AJAX SUBMISSION ──
    */
   function initContactFormValidation() {
     const form = document.querySelector('.contact-form');
     if (!form) return;
 
     form.addEventListener('submit', (e) => {
+      e.preventDefault(); // Intercept form submission
+
       let isValid = true;
       const inputs = form.querySelectorAll('.form-control[required]');
+      const allFormElements = form.querySelectorAll('.form-control, button[type="submit"]');
+      const submitBtn = form.querySelector('button[type="submit"]');
       
       inputs.forEach(input => {
         // Reset custom borders
@@ -250,23 +254,137 @@
         }
       });
 
-      if (!isValid) {
-        e.preventDefault();
-        // Display validation feedback
-        let feedback = form.querySelector('.form-feedback');
-        if (!feedback) {
-          feedback = document.createElement('div');
-          feedback.className = 'form-feedback';
-          feedback.style.color = '#ef4444';
-          feedback.style.fontSize = '0.85rem';
-          feedback.style.marginTop = '1rem';
-          feedback.style.fontFamily = 'var(--display)';
-          feedback.style.fontWeight = '600';
-          form.appendChild(feedback);
-        }
-        feedback.textContent = 'Veuillez remplir correctement tous les champs obligatoires.';
+      // Clear any previous feedback
+      const existingFeedback = form.querySelector('.form-feedback');
+      if (existingFeedback) {
+        existingFeedback.remove();
       }
+
+      if (!isValid) {
+        // Display validation feedback
+        const feedback = document.createElement('div');
+        feedback.className = 'form-feedback error';
+        feedback.textContent = 'Veuillez remplir correctement tous les champs obligatoires.';
+        form.appendChild(feedback);
+        return;
+      }
+
+      // Start AJAX submission
+      const formData = new FormData(form);
+      const userName = form.querySelector('#name') ? form.querySelector('#name').value.trim() : '';
+
+      // Disable inputs and set button to loading
+      allFormElements.forEach(el => el.setAttribute('disabled', 'true'));
+      if (submitBtn) {
+        submitBtn.classList.add('loading');
+      }
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          // Success State Toggling
+          const fieldsContainer = document.querySelector('.form-fields-container');
+          const successContainer = document.querySelector('.form-success-state');
+          const nameSpan = document.getElementById('user-name-span');
+
+          if (nameSpan) {
+            nameSpan.textContent = userName || 'Client';
+          }
+
+          if (fieldsContainer && successContainer) {
+            fieldsContainer.style.opacity = '0';
+            fieldsContainer.style.transform = 'translateY(-10px)';
+
+            setTimeout(() => {
+              fieldsContainer.style.display = 'none';
+              successContainer.style.display = 'flex';
+              
+              // Trigger success checkmark SVG animation restart
+              const checkmark = successContainer.querySelector('.success-checkmark');
+              if (checkmark) {
+                const newCheckmark = checkmark.cloneNode(true);
+                checkmark.parentNode.replaceChild(newCheckmark, checkmark);
+              }
+            }, 400);
+          }
+        } else {
+          return response.json().then(data => {
+            if (data && Object.hasOwnProperty.call(data, 'errors')) {
+              throw new Error(data.errors.map(err => err.message).join(', '));
+            } else if (data && data.error) {
+              throw new Error(data.error);
+            } else {
+              throw new Error("Une erreur est survenue lors de l'envoi.");
+            }
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        
+        // Show validation error feedback
+        const feedback = document.createElement('div');
+        feedback.className = 'form-feedback error';
+        feedback.textContent = error.message || 'Impossible d\'envoyer le message. Veuillez vérifier votre connexion et réessayer.';
+        form.appendChild(feedback);
+
+        // Re-enable form fields
+        allFormElements.forEach(el => el.removeAttribute('disabled'));
+        if (submitBtn) {
+          submitBtn.classList.remove('loading');
+        }
+      });
     });
+
+    // Form reset control
+    const resetBtn = document.querySelector('.btn-reset-form');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        const fieldsContainer = document.querySelector('.form-fields-container');
+        const successContainer = document.querySelector('.form-success-state');
+
+        if (fieldsContainer && successContainer) {
+          successContainer.style.opacity = '0';
+          
+          setTimeout(() => {
+            successContainer.style.display = 'none';
+            successContainer.style.opacity = '';
+
+            // Reset elements and validation styles
+            const allFormElements = form.querySelectorAll('.form-control, button[type="submit"]');
+            allFormElements.forEach(el => {
+              el.removeAttribute('disabled');
+              el.style.borderColor = '';
+            });
+
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+              submitBtn.classList.remove('loading');
+            }
+
+            const feedback = form.querySelector('.form-feedback');
+            if (feedback) {
+              feedback.remove();
+            }
+
+            form.reset();
+
+            // Reveal form fields again
+            fieldsContainer.style.display = 'block';
+            setTimeout(() => {
+              fieldsContainer.style.opacity = '1';
+              fieldsContainer.style.transform = 'none';
+            }, 50);
+          }, 300);
+        }
+      });
+    }
   }
 
 })();
